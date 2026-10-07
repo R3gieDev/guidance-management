@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guidance | Students</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/pages/students.css" />
   </head>
 
   <body class="w-100 bg-light">
@@ -21,7 +21,7 @@
 
       <div class="d-flex flex-row items-center gap-2">
         <div class="d-flex flex-column text-white gap-1">
-          <h1>Welcome! <span class="font-normal">Juan Dela Cruz</span></h1>
+          <h1>Welcome! <span class="font-normal">Admin</span></h1>
           <p class="text-light-gray">Super Admin</p>
         </div>
 
@@ -66,34 +66,6 @@
 
       <main class="w-100"><!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Students | Britech Guidance</title>
-
-    <!-- BASE CSS -->
-    <link rel="stylesheet" href="base/theme.css">
-    <link rel="stylesheet" href="base/reset.css">
-    <link rel="stylesheet" href="base/colors.css">
-    <link rel="stylesheet" href="base/display.css">
-    <link rel="stylesheet" href="base/flex.css">
-    <link rel="stylesheet" href="base/gap.css">
-    <link rel="stylesheet" href="base/height.css">
-    <link rel="stylesheet" href="base/margin.css">
-    <link rel="stylesheet" href="base/opacity.css">
-    <link rel="stylesheet" href="base/overflow.css">
-    <link rel="stylesheet" href="base/padding.css">
-    <link rel="stylesheet" href="base/position.css">
-    <link rel="stylesheet" href="base/radius.css">
-    <link rel="stylesheet" href="base/shadow.css">
-    <link rel="stylesheet" href="base/text.css">
-    <link rel="stylesheet" href="base/width.css">
-    <link rel="stylesheet" href="base/border.css">
-    <link rel="stylesheet" href="base/z-index.css">
-</head>
-
 
 <body class="bg-light">
 
@@ -150,7 +122,7 @@
                             id="totalStudents"
                             class="text-2xl font-bold text-primary mt-2">
 
-                            03
+                            0
 
                         </h2>
 
@@ -166,7 +138,7 @@
                         </p>
 
                         <h2 class="text-2xl font-bold text-primary mt-2">
-                            02
+                            0
                         </h2>
 
                     </div>
@@ -181,7 +153,7 @@
                         </p>
 
                         <h2 class="text-2xl font-bold text-primary mt-2">
-                            01
+                            0
                         </h2>
 
                     </div>
@@ -196,7 +168,7 @@
                         </p>
 
                         <h2 class="text-lg font-bold text-primary mt-2">
-                            HUMSS
+                            —
                         </h2>
 
                     </div>
@@ -297,93 +269,30 @@
                                     <tr>
 
                                         <td class="p-4 border-bottom">
-                                            001
+                                            00
                                         </td>
 
                                         <td class="p-4 border-bottom">
-                                            Dela Cruz
+                                            —
                                         </td>
 
                                         <td class="p-4 border-bottom">
-                                            Juan
+                                            —
                                         </td>
 
                                         <td class="p-4 border-bottom">
-                                            Grade 11 - HUMSS
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-
-                                            <span class="text-primary font-bold">
-                                                Active
-                                            </span>
-
-                                        </td>
-
-                                    </tr>
-
-
-                                    <!-- STUDENT 2 -->
-
-                                    <tr>
-
-                                        <td class="p-4 border-bottom">
-                                            002
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            Santos
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            Maria
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            Grade 11 - HUMSS
+                                            —
                                         </td>
 
                                         <td class="p-4 border-bottom">
 
                                             <span class="text-primary font-bold">
-                                                Active
+                                                —
                                             </span>
 
                                         </td>
 
                                     </tr>
-
-
-                                    <!-- STUDENT 3 -->
-
-                                    <tr>
-
-                                        <td class="p-4">
-                                            003
-                                        </td>
-
-                                        <td class="p-4">
-                                            Garcia
-                                        </td>
-
-                                        <td class="p-4">
-                                            Pedro
-                                        </td>
-
-                                        <td class="p-4">
-                                            Grade 12 - ICT
-                                        </td>
-
-                                        <td class="p-4">
-
-                                            <span class="text-gray">
-                                                No Account
-                                            </span>
-
-                                        </td>
-
-                                    </tr>
-
 
                                 </tbody>
 
@@ -632,210 +541,6 @@
 
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
-
-    <script>
-
-        // ==============================
-        // SEARCH STUDENTS
-        // ==============================
-
-        const searchInput =
-            document.getElementById("studentSearch");
-
-        const searchButton =
-            document.getElementById("searchButton");
-
-        const tableBody =
-            document.getElementById("studentTableBody");
-
-
-        function searchStudents() {
-
-            const searchValue =
-                searchInput.value.toLowerCase().trim();
-
-            const rows =
-                tableBody.querySelectorAll("tr");
-
-
-            rows.forEach(function(row) {
-
-                const studentData =
-                    row.textContent.toLowerCase();
-
-                if (studentData.includes(searchValue)) {
-
-                    row.style.display = "";
-
-                } else {
-
-                    row.style.display = "none";
-
-                }
-
-            });
-
-        }
-
-
-        // Search button
-
-        searchButton.addEventListener(
-            "click",
-            searchStudents
-        );
-
-
-        // Search while typing
-
-        searchInput.addEventListener(
-            "input",
-            searchStudents
-        );
-
-
-        // Press Enter
-
-        searchInput.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Enter") {
-
-                    event.preventDefault();
-
-                    searchStudents();
-
-                }
-
-            }
-        );
-
-
-
-        // ==============================
-        // ADD STUDENT
-        // ==============================
-
-        const studentForm =
-            document.getElementById("studentForm");
-
-
-        studentForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-
-                const lastName =
-                    document.getElementById("lastname").value.trim();
-
-                const firstName =
-                    document.getElementById("firstname").value.trim();
-
-                const grade =
-                    document.getElementById("grade").value;
-
-                const account =
-                    document.getElementById("account").value;
-
-
-                if (!lastName || !firstName || !grade) {
-
-                    alert("Please complete the required fields.");
-
-                    return;
-
-                }
-
-
-                // Get next student ID
-
-                const studentCount =
-                    tableBody.querySelectorAll("tr").length + 1;
-
-                const studentID =
-                    String(studentCount).padStart(3, "0");
-
-
-                // Create new row
-
-                const newRow =
-                    document.createElement("tr");
-
-
-                newRow.innerHTML = `
-
-                    <td class="p-4 border-bottom">
-                        ${studentID}
-                    </td>
-
-                    <td class="p-4 border-bottom">
-                        ${lastName}
-                    </td>
-
-                    <td class="p-4 border-bottom">
-                        ${firstName}
-                    </td>
-
-                    <td class="p-4 border-bottom">
-                        ${grade}
-                    </td>
-
-                    <td class="p-4 border-bottom">
-                        <span class="text-primary font-bold">
-                            ${account}
-                        </span>
-                    </td>
-
-                `;
-
-
-                tableBody.appendChild(newRow);
-
-
-                // Update total students
-
-                document.getElementById(
-                    "totalStudents"
-                ).textContent =
-                    String(
-                        tableBody.querySelectorAll("tr").length
-                    ).padStart(2, "0");
-
-
-                // Clear form
-
-                studentForm.reset();
-
-
-                alert("Student added successfully!");
-
-            }
-        );
-
-
-
-        // ==============================
-        // CLOSE FORM
-        // ==============================
-
-        document
-            .getElementById("closeForm")
-            .addEventListener(
-                "click",
-                function() {
-
-                    studentForm.reset();
-
-                }
-            );
-
-    </script>
 
 </body>
 
