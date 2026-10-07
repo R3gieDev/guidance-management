@@ -1,135 +1,81 @@
+// ==============================
+// SEARCH STUDENTS
+// ==============================
 
-        // ==============================
-        // SEARCH STUDENTS
-        // ==============================
+const searchInput = document.getElementById("studentSearch");
 
-        const searchInput =
-            document.getElementById("studentSearch");
+const searchButton = document.getElementById("searchButton");
 
-        const searchButton =
-            document.getElementById("searchButton");
+const tableBody = document.getElementById("studentTableBody");
 
-        const tableBody =
-            document.getElementById("studentTableBody");
+function searchStudents() {
+  const searchValue = searchInput.value.toLowerCase().trim();
 
+  const rows = tableBody.querySelectorAll("tr");
 
-        function searchStudents() {
+  rows.forEach(function (row) {
+    const studentData = row.textContent.toLowerCase();
 
-            const searchValue =
-                searchInput.value.toLowerCase().trim();
+    if (studentData.includes(searchValue)) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+}
 
-            const rows =
-                tableBody.querySelectorAll("tr");
+// Search button
 
+searchButton.addEventListener("click", searchStudents);
 
-            rows.forEach(function(row) {
+// Search while typing
 
-                const studentData =
-                    row.textContent.toLowerCase();
+searchInput.addEventListener("input", searchStudents);
 
-                if (studentData.includes(searchValue)) {
+// Press Enter
 
-                    row.style.display = "";
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
 
-                } else {
+    searchStudents();
+  }
+});
 
-                    row.style.display = "none";
+// ==============================
+// ADD STUDENT
+// ==============================
 
-                }
+const studentForm = document.getElementById("studentForm");
 
-            });
+studentForm.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-        }
+  const lastName = document.getElementById("lastname").value.trim();
 
+  const firstName = document.getElementById("firstname").value.trim();
 
-        // Search button
+  const grade = document.getElementById("grade").value;
 
-        searchButton.addEventListener(
-            "click",
-            searchStudents
-        );
+  const account = document.getElementById("account").value;
 
+  if (!lastName || !firstName || !grade) {
+    alert("Please complete the required fields.");
 
-        // Search while typing
+    return;
+  }
 
-        searchInput.addEventListener(
-            "input",
-            searchStudents
-        );
+  // Get next student ID
 
+  const studentCount = tableBody.querySelectorAll("tr").length + 1;
 
-        // Press Enter
+  const studentID = String(studentCount).padStart(3, "0");
 
-        searchInput.addEventListener(
-            "keydown",
-            function(event) {
+  // Create new row
 
-                if (event.key === "Enter") {
+  const newRow = document.createElement("tr");
 
-                    event.preventDefault();
-
-                    searchStudents();
-
-                }
-
-            }
-        );
-
-
-
-        // ==============================
-        // ADD STUDENT
-        // ==============================
-
-        const studentForm =
-            document.getElementById("studentForm");
-
-
-        studentForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-
-                const lastName =
-                    document.getElementById("lastname").value.trim();
-
-                const firstName =
-                    document.getElementById("firstname").value.trim();
-
-                const grade =
-                    document.getElementById("grade").value;
-
-                const account =
-                    document.getElementById("account").value;
-
-
-                if (!lastName || !firstName || !grade) {
-
-                    alert("Please complete the required fields.");
-
-                    return;
-
-                }
-
-
-                // Get next student ID
-
-                const studentCount =
-                    tableBody.querySelectorAll("tr").length + 1;
-
-                const studentID =
-                    String(studentCount).padStart(3, "0");
-
-
-                // Create new row
-
-                const newRow =
-                    document.createElement("tr");
-
-
-                newRow.innerHTML = `
+  newRow.innerHTML = `
 
                     <td class="p-4 border-bottom">
                         ${studentID}
@@ -155,44 +101,26 @@
 
                 `;
 
+  tableBody.appendChild(newRow);
 
-                tableBody.appendChild(newRow);
+  // Update total students
 
+  document.getElementById("totalStudents").textContent = String(tableBody.querySelectorAll("tr").length).padStart(
+    2,
+    "0",
+  );
 
-                // Update total students
+  // Clear form
 
-                document.getElementById(
-                    "totalStudents"
-                ).textContent =
-                    String(
-                        tableBody.querySelectorAll("tr").length
-                    ).padStart(2, "0");
+  studentForm.reset();
 
+  alert("Student added successfully!");
+});
 
-                // Clear form
+// ==============================
+// CLOSE FORM
+// ==============================
 
-                studentForm.reset();
-
-
-                alert("Student added successfully!");
-
-            }
-        );
-
-
-
-        // ==============================
-        // CLOSE FORM
-        // ==============================
-
-        document
-            .getElementById("closeForm")
-            .addEventListener(
-                "click",
-                function() {
-
-                    studentForm.reset();
-
-                }
-            );
-
+document.getElementById("closeForm").addEventListener("click", function () {
+  studentForm.reset();
+});

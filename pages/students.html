@@ -64,487 +64,245 @@
         </nav>
       </aside>
 
-      <main class="w-100"><!DOCTYPE html>
-<html lang="en">
-
-<body class="bg-light">
-
-    <main class="p-8">
-
+      <main class="p-8 main-container__h-85 w-100">
         <!-- PAGE HEADER -->
 
         <div class="d-flex items-center justify-between mb-8">
+          <div>
+            <h1 class="text-3xl font-bold text-dark">Students</h1>
 
-            <div>
-                <h1 class="text-3xl font-bold text-dark">
-                    Students
-                </h1>
+            <p class="text-gray mt-2">Manage student information and accounts.</p>
+          </div>
 
-                <p class="text-gray mt-2">
-                    Manage student information and accounts.
-                </p>
-            </div>
-
-            <a
-                href="dashboard.html"
-                class="bg-primary text-white px-6 py-3 radius-lg text-decoration-none font-bold">
-
-                ← Dashboard
-
-            </a>
-
+          <a href="dashboard.html" class="bg-primary text-white px-6 py-3 radius-lg text-decoration-none font-bold">
+            ← Dashboard
+          </a>
         </div>
-
 
         <!-- MAIN CONTENT -->
 
         <section class="d-flex gap-8 items-start">
+          <!-- LEFT SIDE -->
 
+          <div class="flex-1">
+            <!-- SUMMARY CARDS -->
 
-            <!-- LEFT SIDE -->
+            <div class="d-flex gap-4 mb-8">
+              <!-- TOTAL STUDENTS -->
 
-            <div class="flex-1">
+              <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
+                <p class="text-sm text-gray">TOTAL STUDENTS</p>
 
+                <h2 id="totalStudents" class="text-2xl font-bold text-primary mt-2">0</h2>
+              </div>
 
-                <!-- SUMMARY CARDS -->
+              <!-- WITH ACCOUNTS -->
 
-                <div class="d-flex gap-4 mb-8">
+              <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
+                <p class="text-sm text-gray">WITH ACCOUNTS</p>
 
-                    <!-- TOTAL STUDENTS -->
+                <h2 class="text-2xl font-bold text-primary mt-2">0</h2>
+              </div>
 
-                    <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
+              <!-- WITHOUT ACCOUNTS -->
 
-                        <p class="text-sm text-gray">
-                            TOTAL STUDENTS
-                        </p>
+              <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
+                <p class="text-sm text-gray">WITHOUT ACCOUNTS</p>
 
-                        <h2
-                            id="totalStudents"
-                            class="text-2xl font-bold text-primary mt-2">
+                <h2 class="text-2xl font-bold text-primary mt-2">0</h2>
+              </div>
 
-                            0
+              <!-- MAJORITY STRAND -->
 
-                        </h2>
+              <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
+                <p class="text-sm text-gray">MAJORITY STRAND</p>
 
-                    </div>
-
-
-                    <!-- WITH ACCOUNTS -->
-
-                    <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
-
-                        <p class="text-sm text-gray">
-                            WITH ACCOUNTS
-                        </p>
-
-                        <h2 class="text-2xl font-bold text-primary mt-2">
-                            0
-                        </h2>
-
-                    </div>
-
-
-                    <!-- WITHOUT ACCOUNTS -->
-
-                    <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
-
-                        <p class="text-sm text-gray">
-                            WITHOUT ACCOUNTS
-                        </p>
-
-                        <h2 class="text-2xl font-bold text-primary mt-2">
-                            0
-                        </h2>
-
-                    </div>
-
-
-                    <!-- MAJORITY STRAND -->
-
-                    <div class="bg-white border-1 border-light-gray p-5 radius-lg flex-1">
-
-                        <p class="text-sm text-gray">
-                            MAJORITY STRAND
-                        </p>
-
-                        <h2 class="text-lg font-bold text-primary mt-2">
-                            —
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- STUDENT TABLE -->
-
-                <div class="bg-white border-1 border-light-gray radius-lg shadow overflow-hidden">
-
-                    <div class="p-6">
-
-
-                        <!-- TABLE HEADER -->
-
-                        <div class="d-flex items-center justify-between mb-6">
-
-                            <div>
-
-                                <h2 class="text-xl font-bold text-dark">
-                                    Student List
-                                </h2>
-
-                                <p class="text-sm text-gray mt-2">
-                                    Registered students
-                                </p>
-
-                            </div>
-
-
-                            <!-- SEARCH BAR -->
-
-                            <div class="d-flex items-center gap-2">
-
-                                <input
-                                    type="text"
-                                    id="studentSearch"
-                                    placeholder="Search student..."
-                                    class="border-1 border-light-gray radius-lg p-3">
-
-                                <button
-                                    type="button"
-                                    id="searchButton"
-                                    class="bg-primary text-white border-0 radius-lg px-5 py-3">
-
-                                    🔍 Search
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- TABLE -->
-
-                        <div class="overflow-auto">
-
-                            <table class="w-100">
-
-                                <thead>
-
-                                    <tr>
-
-                                        <th class="text-left p-4 border-bottom">
-                                            ID
-                                        </th>
-
-                                        <th class="text-left p-4 border-bottom">
-                                            Last Name
-                                        </th>
-
-                                        <th class="text-left p-4 border-bottom">
-                                            First Name
-                                        </th>
-
-                                        <th class="text-left p-4 border-bottom">
-                                            Grade & Section
-                                        </th>
-
-                                        <th class="text-left p-4 border-bottom">
-                                            Account
-                                        </th>
-
-                                    </tr>
-
-                                </thead>
-
-
-                                <tbody id="studentTableBody">
-
-
-                                    <!-- STUDENT 1 -->
-
-                                    <tr>
-
-                                        <td class="p-4 border-bottom">
-                                            00
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            —
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            —
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-                                            —
-                                        </td>
-
-                                        <td class="p-4 border-bottom">
-
-                                            <span class="text-primary font-bold">
-                                                —
-                                            </span>
-
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <h2 class="text-lg font-bold text-primary mt-2">—</h2>
+              </div>
             </div>
 
-
-
-            <!-- RIGHT SIDE - ADD STUDENTS -->
-
-            <aside
-                class="bg-white border-1 border-light-gray radius-lg shadow p-6"
-                style="width: 320px;">
-
-
-                <!-- FORM HEADER -->
+            <!-- STUDENT TABLE -->
+            <div class="bg-white border-1 border-light-gray radius-lg shadow overflow-hidden">
+              <div class="p-6">
+                <!-- TABLE HEADER -->
 
                 <div class="d-flex items-center justify-between mb-6">
+                  <div>
+                    <h2 class="text-xl font-bold text-dark">Student List</h2>
 
-                    <h2 class="text-xl font-bold text-dark">
-                        Add Students
-                    </h2>
+                    <p class="text-sm text-gray mt-2">Registered students</p>
+                  </div>
 
+                  <!-- SEARCH BAR -->
 
-                    <button
-                        type="button"
-                        id="closeForm"
-                        class="bg-white border-1 border-light-gray radius-lg px-3 py-2 text-dark">
+                  <div class="d-flex items-center gap-2">
+                    <input
+                      type="text"
+                      id="studentSearch"
+                      placeholder="Search student..."
+                      class="border-1 border-light-gray radius-lg p-3"
+                    />
 
-                        ×
-
+                    <button type="button" id="searchButton" class="bg-primary text-white border-0 radius-lg px-5 py-3">
+                      🔍 Search
                     </button>
-
+                  </div>
                 </div>
 
+                <!-- TABLE -->
+
+                <div class="overflow-auto">
+                  <table class="w-100">
+                    <thead>
+                      <tr>
+                        <th class="text-left p-4 border-bottom">ID</th>
 
+                        <th class="text-left p-4 border-bottom">Last Name</th>
 
-                <!-- ADD STUDENT FORM -->
+                        <th class="text-left p-4 border-bottom">First Name</th>
 
-                <form id="studentForm">
+                        <th class="text-left p-4 border-bottom">Grade & Section</th>
+
+                        <th class="text-left p-4 border-bottom">Account</th>
+                      </tr>
+                    </thead>
 
+                    <tbody id="studentTableBody">
+                      <!-- STUDENT 1 -->
 
-                    <!-- LAST NAME -->
+                      <tr>
+                        <td class="p-4 border-bottom">00</td>
 
-                    <div class="mb-5">
+                        <td class="p-4 border-bottom">—</td>
 
-                        <label
-                            for="lastname"
-                            class="d-block text-sm font-semibold text-dark mb-2">
+                        <td class="p-4 border-bottom">—</td>
 
-                            Last Name
+                        <td class="p-4 border-bottom">—</td>
 
-                        </label>
+                        <td class="p-4 border-bottom">
+                          <span class="text-primary font-bold"> — </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                        <input
-                            type="text"
-                            id="lastname"
-                            required
-                            placeholder="Last Name"
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
+          <!-- RIGHT SIDE - ADD STUDENTS -->
 
-                    </div>
+          <aside class="w-25 bg-white border-1 border-light-gray radius-lg shadow p-6">
+            <!-- FORM HEADER -->
 
+            <div class="d-flex items-center justify-between mb-6">
+              <h2 class="text-xl font-bold text-dark">Add Students</h2>
 
+              <button
+                type="button"
+                id="closeForm"
+                class="bg-white border-1 border-light-gray radius-lg px-3 py-2 text-dark"
+              >
+                ×
+              </button>
+            </div>
 
-                    <!-- FIRST NAME -->
+            <!-- ADD STUDENT FORM -->
 
-                    <div class="mb-5">
+            <form id="studentForm">
+              <!-- LAST NAME -->
 
-                        <label
-                            for="firstname"
-                            class="d-block text-sm font-semibold text-dark mb-2">
+              <div class="mb-5">
+                <label for="lastname" class="d-block text-sm font-semibold text-dark mb-2"> Last Name </label>
 
-                            First Name
+                <input
+                  type="text"
+                  id="lastname"
+                  required
+                  placeholder="Last Name"
+                  class="w-100 border-1 border-light-gray radius-lg p-3"
+                />
+              </div>
 
-                        </label>
+              <!-- FIRST NAME -->
 
-                        <input
-                            type="text"
-                            id="firstname"
-                            required
-                            placeholder="First Name"
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
+              <div class="mb-5">
+                <label for="firstname" class="d-block text-sm font-semibold text-dark mb-2"> First Name </label>
 
-                    </div>
+                <input
+                  type="text"
+                  id="firstname"
+                  required
+                  placeholder="First Name"
+                  class="w-100 border-1 border-light-gray radius-lg p-3"
+                />
+              </div>
 
+              <!-- MIDDLE NAME -->
 
+              <div class="mb-5">
+                <label for="middlename" class="d-block text-sm font-semibold text-dark mb-2"> Middle Name </label>
 
-                    <!-- MIDDLE NAME -->
+                <input
+                  type="text"
+                  id="middlename"
+                  placeholder="Middle Name"
+                  class="w-100 border-1 border-light-gray radius-lg p-3"
+                />
+              </div>
 
-                    <div class="mb-5">
+              <!-- CONTACT NUMBER -->
 
-                        <label
-                            for="middlename"
-                            class="d-block text-sm font-semibold text-dark mb-2">
+              <div class="mb-5">
+                <label for="contact" class="d-block text-sm font-semibold text-dark mb-2"> Contact No. </label>
 
-                            Middle Name
+                <input
+                  type="tel"
+                  id="contact"
+                  placeholder="Contact Number"
+                  class="w-100 border-1 border-light-gray radius-lg p-3"
+                />
+              </div>
 
-                        </label>
+              <!-- GRADE AND SECTION -->
 
-                        <input
-                            type="text"
-                            id="middlename"
-                            placeholder="Middle Name"
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
+              <div class="mb-5">
+                <label for="grade" class="d-block text-sm font-semibold text-dark mb-2"> Grade and Section </label>
 
-                    </div>
+                <select id="grade" required class="w-100 border-1 border-light-gray radius-lg p-3">
+                  <option value="">Select Grade & Section</option>
 
+                  <option value="Grade 11 - HUMSS">Grade 11 - HUMSS</option>
 
+                  <option value="Grade 11 - ICT">Grade 11 - ICT</option>
 
-                    <!-- CONTACT NUMBER -->
+                  <option value="Grade 12 - HUMSS">Grade 12 - HUMSS</option>
 
-                    <div class="mb-5">
+                  <option value="Grade 12 - ICT">Grade 12 - ICT</option>
+                </select>
+              </div>
 
-                        <label
-                            for="contact"
-                            class="d-block text-sm font-semibold text-dark mb-2">
+              <!-- SELECT ACCOUNT -->
 
-                            Contact No.
+              <div class="mb-8">
+                <label for="account" class="d-block text-sm font-semibold text-dark mb-2"> Select Account </label>
 
-                        </label>
+                <select id="account" class="w-100 border-1 border-light-gray radius-lg p-3">
+                  <option value="Active">Active Account</option>
 
-                        <input
-                            type="tel"
-                            id="contact"
-                            placeholder="Contact Number"
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
+                  <option value="No Account">No Account</option>
+                </select>
+              </div>
 
-                    </div>
+              <!-- ADD STUDENT -->
 
-
-
-                    <!-- GRADE AND SECTION -->
-
-                    <div class="mb-5">
-
-                        <label
-                            for="grade"
-                            class="d-block text-sm font-semibold text-dark mb-2">
-
-                            Grade and Section
-
-                        </label>
-
-                        <select
-                            id="grade"
-                            required
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
-
-                            <option value="">
-                                Select Grade & Section
-                            </option>
-
-                            <option value="Grade 11 - HUMSS">
-                                Grade 11 - HUMSS
-                            </option>
-
-                            <option value="Grade 11 - ICT">
-                                Grade 11 - ICT
-                            </option>
-
-                            <option value="Grade 12 - HUMSS">
-                                Grade 12 - HUMSS
-                            </option>
-
-                            <option value="Grade 12 - ICT">
-                                Grade 12 - ICT
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <!-- SELECT ACCOUNT -->
-
-                    <div class="mb-8">
-
-                        <label
-                            for="account"
-                            class="d-block text-sm font-semibold text-dark mb-2">
-
-                            Select Account
-
-                        </label>
-
-                        <select
-                            id="account"
-                            class="w-100 border-1 border-light-gray radius-lg p-3">
-
-                            <option value="Active">
-                                Active Account
-                            </option>
-
-                            <option value="No Account">
-                                No Account
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <!-- ADD STUDENT -->
-
-                    <button
-                        type="submit"
-                        class="w-100 bg-primary text-white border-0 radius-lg p-4 font-bold">
-
-                        Add Student
-
-                    </button>
-
-                </form>
-
-            </aside>
-
+              <button type="submit" class="w-100 bg-primary text-white border-0 radius-lg p-4 font-bold">
+                Add Student
+              </button>
+            </form>
+          </aside>
         </section>
-
-
-
-        <!-- FOOTER -->
-
-        <footer class="text-center p-8 mt-8">
-
-            <p class="text-sm text-gray">
-                © 2026 Britech College
-            </p>
-
-            <p class="text-sm text-gray mt-2">
-                Web-Based Guidance Management System
-            </p>
-
-        </footer>
-
-    </main>
-
-
-
-
-</body>
-
-</html></main>
+      </main>
     </div>
     <footer class="px-3 footer__h-5 d-flex flex-row items-center bg-warning">
       <p class="text-sm text-gray">

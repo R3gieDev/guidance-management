@@ -64,7 +64,418 @@
         </nav>
       </aside>
 
-      <main class="w-100"></main>
+<main class="p-8">
+
+        <!-- PAGE HEADER -->
+
+        <div class="d-flex items-center justify-between mb-6">
+
+            <div>
+
+                <h1 class="text-3xl font-bold text-dark">
+                    Accounts
+                </h1>
+
+                <p class="text-gray mt-2">
+                    Manage user accounts and information.
+                </p>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="bg-primary text-white px-6 py-3 radius-lg text-decoration-none font-bold">
+
+                ← Dashboard
+
+            </a>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+
+        <section class="d-flex gap-6 items-start">
+
+
+           
+
+
+
+            <!-- CENTER TABLE -->
+
+            <section class="flex-1">
+
+                <div
+                    class="bg-white border-1 border-light-gray radius-lg shadow p-6">
+
+
+                    <!-- TABLE HEADER -->
+
+                    <div
+                        class="d-flex items-center justify-between mb-6">
+
+                        <div>
+
+                            <h2 class="text-xl font-bold text-dark">
+                                Account List
+                            </h2>
+
+                            <p class="text-sm text-gray mt-2">
+                                Registered accounts
+                            </p>
+
+                        </div>
+
+
+                        <!-- SEARCH -->
+
+                        <div class="d-flex items-center gap-2">
+
+                            <input
+                                type="text"
+                                id="accountSearch"
+                                placeholder="Search account..."
+                                class="border-1 border-light-gray radius-lg p-3">
+
+
+                            <button
+                                type="button"
+                                id="searchButton"
+                                class="bg-primary text-white border-0 radius-lg px-5 py-3">
+
+                                🔍
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACCOUNT TABLE -->
+
+                    <div class="overflow-auto">
+
+                        <table class="w-100">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="text-left p-4 border-bottom">
+                                        Username
+                                    </th>
+
+                                    <th class="text-left p-4 border-bottom">
+                                        Role ID
+                                    </th>
+
+                                    <th class="text-left p-4 border-bottom">
+                                        Name
+                                    </th>
+
+                                    <th class="text-left p-4 border-bottom">
+                                        Contact
+                                    </th>
+
+                                    <th class="text-left p-4 border-bottom">
+                                        Email
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="accountTableBody">
+
+
+                                <!-- ACCOUNT 1 -->
+
+                                <tr>
+
+                                    <td class="p-4 border-bottom">
+                                        admin
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        01
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        Administrator Brac
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        09123456789
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        admin@britech.edu
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ACCOUNT 2 -->
+
+                                <tr>
+
+                                    <td class="p-4 border-bottom">
+                                        counselor01
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        02
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        Juan Dela Cruz
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        09987654321
+                                    </td>
+
+                                    <td class="p-4 border-bottom">
+                                        counselor@britech.edu
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RIGHT SIDE - ADD ACCOUNT -->
+
+            <aside
+                class="bg-white border-1 border-light-gray radius-lg shadow p-6"
+                style="width: 320px;">
+
+
+                <!-- FORM HEADER -->
+
+                <div
+                    class="d-flex items-center justify-between mb-6">
+
+                    <h2 class="text-xl font-bold text-dark">
+                        Add Accounts
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        id="closeForm"
+                        class="bg-white border-1 border-light-gray radius-lg px-3 py-2 text-dark">
+
+                        ×
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form id="accountForm">
+
+
+                    <!-- USERNAME -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="username"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Username
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            required
+                            placeholder="Username"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="password"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Password
+
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            required
+                            placeholder="Password"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- ROLE ID -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="roleId"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Role ID
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="roleId"
+                            required
+                            placeholder="Role ID"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- LAST NAME -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="lastName"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Last Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            required
+                            placeholder="Last Name"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- FIRST NAME -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="firstName"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            First Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            required
+                            placeholder="First Name"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- CONTACT -->
+
+                    <div class="mb-5">
+
+                        <label
+                            for="contactNo"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Contact No.
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contactNo"
+                            required
+                            placeholder="Contact Number"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="mb-6">
+
+                        <label
+                            for="email"
+                            class="d-block text-sm font-semibold text-dark mb-2">
+
+                            Email
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="Email Address"
+                            class="w-100 border-1 border-light-gray radius-lg p-3">
+
+                    </div>
+
+
+
+                    <!-- ADD ACCOUNT -->
+
+                    <button
+                        type="submit"
+                        class="w-100 bg-primary text-white border-0 radius-lg p-4 font-bold">
+
+                        Add Account
+
+                    </button>
+
+                </form>
+
+            </aside>
+
+        </section>
+
+
+
+        
+
+    </main>
     </div>
     <footer class="px-3 footer__h-5 d-flex flex-row items-center bg-warning">
       <p class="text-sm text-gray">
