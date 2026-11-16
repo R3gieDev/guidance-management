@@ -1,5 +1,5 @@
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
-const accountsService = require("../services/accounts-service.js");
+const accountsService = require("../services/accounts-services.js");
 
 const createAccount = async (req, res) => {
   try {
@@ -101,7 +101,7 @@ const updateAccount = async (req, res) => {
 
     const result = await accountsService.updateAccount(id, username, password);
 
-    return res.status(StatusCodes.Ok).json({
+    return res.status(StatusCodes.OK).json({
       success: true,
       message: "Account updated successfully.",
       data: result,

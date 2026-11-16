@@ -8,6 +8,7 @@ const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 const db = require("./config/database.js");
 const app = express();
 const authRoutes = require("./routes/auth-routes.js");
+const accountsRoutes = require("./routes/accounts-routes.js");
 
 const PROJECT_ROOT = path.join(__dirname, "../..");
 
@@ -53,5 +54,6 @@ app.get("/api/health/db", async (req, res) => {
 });
 
 app.use("/api", authRoutes);
+app.use("/api/accounts", accountsRoutes);
 
 module.exports = app;

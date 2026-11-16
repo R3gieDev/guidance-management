@@ -60,7 +60,7 @@ const findAccountByUsername = async (username) => {
 // ==========================================
 // UPDATE OPERATION
 // ==========================================
-const updateAccount = async (id, data) => {
+const updateAccount = async (id, username, password) => {
   if (!id) {
     throw new Error("Account ID is required.");
   }
