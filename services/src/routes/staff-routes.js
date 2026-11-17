@@ -13,6 +13,6 @@ router.get("/:id", staffController.findStaffById);
 router.get("/:accountId", staffController.findStaffByAccountId);
 router.get("/:email", staffController.findStaffByEmail);
 router.put("/:id", staffController.updateStaff);
-router.delete("/:id", staffController.deleteStaff);
+router.delete("/:id", staffController.deleteStaff.apply);
 
 module.exports = router;

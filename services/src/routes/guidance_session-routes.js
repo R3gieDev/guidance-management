@@ -14,8 +14,7 @@ router.get("/caseRecordId", guidanceSessionController.findGuidanceSessionsByCase
 router.get("/staffId", guidanceSessionController.findGuidanceSessionsByStaffId);
 router.get("/status", guidanceSessionController.findGuidanceSessionsByStatus);
 router.get("/sessionType", guidanceSessionController.findGuidanceSessionsByType);
-router.get("/id", guidanceSessionController.findSchoolYearByYear);
-router.put("/:id", guidanceSessionController.updateSchoolYear);
-router.delete("/:id", guidanceSessionController.deleteSchoolYear);
+router.put("/:id", guidanceSessionController.updateGuidanceSession);
+router.delete("/:id", guidanceSessionController.deleteGuidanceSession);
 
 module.exports = router;
