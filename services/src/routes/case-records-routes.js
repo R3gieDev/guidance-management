@@ -7,15 +7,15 @@ const router = Router();
 
 router.use(authenticate);
 
-router.post("/", caserecordController.createCaseRecords);
-router.get("/", caserecordController.findAllCaseRecords);
-router.get("/:id", caserecordsController.findCaseRecordsById);
-router.get("/:studentId", caserecordsController.findCaseRecordsByStudentById);
+router.post("/", caserecordsController.createCaseRecord);
+router.get("/", caserecordsController.findAllCaseRecords);
+router.get("/:id", caserecordsController.findCaseRecordById);
+router.get("/:studentId", caserecordsController.findCaseRecordsByStudentId);
 router.get("/:concernId", caserecordsController.findCaseRecordsByConcernId);
 router.get("/:openedBy", caserecordsController.findCaseRecordsByOpenedBy);
 router.get("/:status", caserecordsController.findCaseRecordsByStatus);
 router.get("/:priority", caserecordsController.findCaseRecordsByPriority);
-router.put("/:id", caserecordsController.updateCaseRecords);
-router.delete("/:id", caserecordsController.deleteCaseRecords);
+router.put("/:id", caserecordsController.updateCaseRecord);
+router.delete("/:id", caserecordsController.deleteCaseRecord);
 
 module.exports = router;

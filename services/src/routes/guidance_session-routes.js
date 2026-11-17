@@ -1,7 +1,7 @@
 const { Router } = require("express");
 
 const authenticate = require("../middleware/authenticate.js");
-const guidancesessionController = require("../controller/guidance_sessions-controller.js");
+const guidanceSessionController = require("../controller/guidance_sessions-controller.js");
 
 const router = Router();
 

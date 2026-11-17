@@ -7,11 +7,11 @@ const router = Router();
 
 router.use(authenticate);
 
+router.post("/", guidancereportController.createGuidanceReport);
 router.get("/", guidancereportController.findAllGuidanceReports);
 router.get("/:id", guidancereportController.findGuidanceReportById);
 router.get("/:staffId", guidancereportController.findGuidanceReportsByStaffId);
 router.get("/:reportType", guidancereportController.findGuidanceReportsByType);
-router.post("/", guidancereportController.createGuidanceReport);
 router.put("/:id", guidancereportController.updateGuidanceReport);
 router.delete("/:id", guidancereportController.deleteGuidanceReport);
 
