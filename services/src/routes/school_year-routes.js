@@ -7,7 +7,7 @@ const router = Router();
 
 router.use(authenticate);
 
-router.get("/", schoolYearController.createSchoolYear);
+router.post("/", schoolYearController.createSchoolYear);
 router.get("/", schoolYearController.findAllSchoolYears);
 router.get("/id", schoolYearController.findSchoolYearById);
 router.get("/schoolYear", schoolYearController.findSchoolYearByYear);
