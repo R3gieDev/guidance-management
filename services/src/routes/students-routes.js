@@ -7,13 +7,13 @@ const router = Router();
 
 router.use(authenticate);
 
+router.post("/", studentsController.createStudent);
 router.get("/", studentsController.findAllStudents);
 router.get("/:id", studentsController.findStudentById);
 router.get("/:gradeSectionId", studentsController.findStudentsByGradeSectionId);
 router.get("/:accountId", studentsController.findStudentByAccountId);
 router.get("/:lastname", studentsController.findStudentsByLastname);
 router.get("/:name", studentsController.findStudentsByName);
-router.post("/", studentsController.createStudent);
 router.put("/:id", studentsController.updateStudent);
 router.delete("/:id", studentsController.deleteStudent);
 
