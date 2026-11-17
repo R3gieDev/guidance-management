@@ -1,20 +1,20 @@
 const { Router } = require("express");
 
 const authenticate = require("../middleware/authenticate.js");
-const guidanceSessionController = require("../controller/guidance_sessions-controller.js");
+const guidancesessionController = require("../controller/guidance_sessions-controller.js");
 
 const router = Router();
 
 router.use(authenticate);
 
-router.get("/", guidanceSessionController.createGuidanceSession);
-router.get("/", guidanceSessionController.findAllGuidanceSessions);
-router.get("/id", guidanceSessionController.findGuidanceSessionById);
-router.get("/caseRecordId", guidanceSessionController.findGuidanceSessionsByCaseRecordId);
-router.get("/staffId", guidanceSessionController.findGuidanceSessionsByStaffId);
-router.get("/status", guidanceSessionController.findGuidanceSessionsByStatus);
-router.get("/sessionType", guidanceSessionController.findGuidanceSessionsByType);
-router.put("/:id", guidanceSessionController.updateGuidanceSession);
-router.delete("/:id", guidanceSessionController.deleteGuidanceSession);
+router.get("/", guidancesessionController.findAllGuidanceSessions);
+router.get("/:id", guidancesessionController.findGuidanceSessionById);
+router.get("/:caseRecordId", guidancesessionController.findGuidanceSessionsByCaseRecordId);
+router.get("/:staffId", guidancesessionController.findGuidanceSessionsByStaffId);
+router.get("/:status", guidancesessionController.findGuidanceSessionsByStatus);
+router.get("/:sessionType", guidancesessionController.findGuidanceSessionsByType);
+router.post("/", guidancesessionController.createGuidanceSession);
+router.put("/:id", guidancesessionController.updateGuidanceSession);
+router.delete("/:id", guidancesessionController.deleteGuidanceSession);
 
 module.exports = router;
