@@ -7,7 +7,7 @@ const router = Router();
 
 router.use(authenticate);
 
-router.get("/", rolesController.createRole);
+router.post("/", rolesController.createRole);
 router.get("/", rolesController.findAllRoles);
 router.get("/", rolesController.findRoleById);
 router.get("/", rolesController.findRoleByName);

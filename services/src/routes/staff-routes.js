@@ -7,7 +7,7 @@ const router = Router();
 
 router.use(authenticate);
 
-router.get("/", staffController.createStaff);
+router.post("/", staffController.createStaff);
 router.get("/:", staffController.findAllStaffs);
 router.get("/:id", staffController.findStaffById);
 router.get("/:accountId", staffController.findStaffByAccountId);

@@ -7,7 +7,7 @@ const router = Router();
 
 router.use(authenticate);
 
-router.get("/", guidanceSessionController.createGuidanceSession);
+router.post("/", guidanceSessionController.createGuidanceSession);
 router.get("/", guidanceSessionController.findAllGuidanceSessions);
 router.get("/id", guidanceSessionController.findGuidanceSessionById);
 router.get("/caseRecordId", guidanceSessionController.findGuidanceSessionsByCaseRecordId);
